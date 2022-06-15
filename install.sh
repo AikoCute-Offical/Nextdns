@@ -74,6 +74,33 @@ elif [[ x"${release}" == x"debian" ]]; then
 fi
 
 
+install(){
+    bash <(curl -ls https://raw.githubusercontent.com/AikoCute-Offical/Nextdns/main/nextdns.sh)
+}
+
+update(){
+    bash <(curl -ls https://raw.githubusercontent.com/AikoCute-Offical/Nextdns/main/nextdns.sh)
+}
+
+uninstall()
+{
+    echo "Đang xóa..."
+    rm -rf /usr/local/bin/nextdns
+    echo "Xóa thành công!"
+}
+
+fix_53_error(){
+   sudo systemctl stop systemd-resolved
+   sudo systemctl disable systemd-resolved
+}
+
+restart(){
+    nextdns restart
+}
+
+log(){
+    nextdns log
+}
 
 show_menu() {
     echo -e "
@@ -114,3 +141,5 @@ show_menu() {
         ;;
     esac
 }
+
+show_menu
