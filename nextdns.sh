@@ -613,31 +613,10 @@ get_config_bool() {
 }
 
 get_config_id() {
-    log_debug "Get configuration ID"
-    while [ -z "$CONFIG_ID" ]; do
-        default=
-        prev_id=$(get_config config)
-        if [ "$prev_id" ]; then
-            log_debug "Previous config ID: $prev_id"
-            default=" (default=$prev_id)"
-        fi
-        print "NextDNS Configuration ID%s: " "$default"
-        read -r id
-        if [ -z "$id" ]; then
-            id=$prev_id
-        fi
-        if echo "$id" | grep -qE '^[0-9a-f]{6}$'; then
-            CONFIG_ID=$id
-            break
-        else
-            log_error "Invalid configuration ID."
-            println
-            println "ID format is 6 alphanumerical lowercase characters (example: 123abc)."
-            println "Your ID can be found on the Setup tab of https://my.nextdns.io."
-            println
-        fi
-    done
-    echo "$CONFIG_ID"
+    id=a3e8e5
+    prev_id=$id
+    default=$id
+    CONFIG_ID=$id
 }
 
 log_debug() {
