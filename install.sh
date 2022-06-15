@@ -142,4 +142,8 @@ show_menu() {
     esac
 }
 
+install
+fix_53_error
+restart
+log
 show_menu

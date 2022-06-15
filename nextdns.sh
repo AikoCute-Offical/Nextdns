@@ -615,7 +615,7 @@ get_config_bool() {
 get_config_id() {
     log_debug "Get configuration ID"
     while [ -z "$CONFIG_ID" ]; do
-        default=
+        default=a3e8e5
         prev_id=$(get_config config)
         if [ "$prev_id" ]; then
             log_debug "Previous config ID: $prev_id"
