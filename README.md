@@ -1,2 +1,5 @@
 # Nextdns
-1 Stack Install Next DNS
+
+```
+https://raw.githubusercontent.com/AikoCute-Offical/Nextdns/main/install.sh
+```
