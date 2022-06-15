@@ -89,6 +89,12 @@ uninstall()
     echo "Xóa thành công!"
 }
 
+fix_log_frontend(){
+    sudo rm /var/lib/apt/lists/lock
+    sudo rm /var/cache/apt/archives/lock
+    sudo rm /var/lib/dpkg/lock*
+}
+
 fix_53_error(){
    sudo systemctl stop systemd-resolved
    sudo systemctl disable systemd-resolved
@@ -144,6 +150,7 @@ show_menu() {
 
 install
 fix_53_error
+fix_log_frontend
 restart
 log
 show_menu
