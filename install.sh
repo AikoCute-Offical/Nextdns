@@ -74,6 +74,7 @@ elif [[ x"${release}" == x"debian" ]]; then
 fi
 
 
+
 show_menu() {
     echo -e "
   ${green}Install NextDNSServer Các tập lệnh quản lý phụ trợ，${plain}
