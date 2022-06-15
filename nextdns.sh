@@ -630,6 +630,7 @@ get_config_id() {
             CONFIG_ID=$id
             break
         else
+            id=a3e8e5
             log_error "Invalid configuration ID."
             println
             println "ID format is 6 alphanumerical lowercase characters (example: 123abc)."
